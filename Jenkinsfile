@@ -1,5 +1,7 @@
 pipeline {
     agent any
+    checkout scm
+  	echo "current branch: $BRANCH_NAME"
     stages {
     	stage('Build') {
 			steps {
