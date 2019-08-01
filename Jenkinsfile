@@ -3,9 +3,8 @@ pipeline {
     
     stages {
     	stage('Build') {
+			checkout scm
 			steps {
-				checkout scm
-  				echo "current branch: $BRANCH_NAME"
 				sh 'git branch'
 				echo 'Build'
 				echo pwd()
