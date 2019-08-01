@@ -7,7 +7,7 @@ pipeline {
     }
     stages {
     	stage('Build') {
-			setps {
+			steps {
 				echo 'Build'
 			}
     	}
