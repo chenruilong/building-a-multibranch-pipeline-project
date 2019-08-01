@@ -3,6 +3,7 @@ pipeline {
     stages {
     	stage('Build') {
 			steps {
+				sh 'git branch'
 				echo 'Build'
 				echo pwd()
 			}
