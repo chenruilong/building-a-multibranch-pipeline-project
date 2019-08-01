@@ -9,7 +9,7 @@ pipeline {
     	stage('Build') {
     		checkout scm
     	}
-    	stage('Test') {
+    	stage('Deploy Test') {
 			when {
 				branch 'dev'
 			}
@@ -17,7 +17,7 @@ pipeline {
 				echo 'delopy test'
 			}
     	}
-        stage('Build') {
+        stage('Deploy Prod') {
         	when {
         		branch 'master'
         	}
