@@ -15,6 +15,7 @@ pipeline {
 			}
 			steps {
 				echo 'delopy test'
+				echo pwd()
 			}
     	}
         stage('Deploy Prod') {
