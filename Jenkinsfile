@@ -1,17 +1,20 @@
 pipeline {
     agent {
         docker {
-            image 'node:6-alpine' 
+            image 'node:8' 
             args '-p 3000:3000' 
         }
     }
     stages {
-    	stage('Build-static') {
+    	stage('Build') {
+    		checkout scm
+    	}
+    	stage('Test') {
 			when {
 				branch 'dev'
 			}
 			steps {
-				echo 'build static'
+				echo 'delopy test'
 			}
     	}
         stage('Build') {
@@ -19,7 +22,7 @@ pipeline {
         		branch 'master'
         	}
             steps {
-                sh 'node -v' 
+                sh 'node -v'
             }
         }
     }
