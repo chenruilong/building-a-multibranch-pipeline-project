@@ -6,7 +6,18 @@ pipeline {
         }
     }
     stages {
-        stage('Build') { 
+    	stage('Build-static') {
+			when {
+				branch 'dev'
+			}
+			steps {
+				echo 'build static'
+			}
+    	}
+        stage('Build') {
+        	when {
+        		branch 'master'
+        	}
             steps {
                 sh 'node -v' 
             }
