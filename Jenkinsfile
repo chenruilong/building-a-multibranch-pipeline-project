@@ -3,7 +3,7 @@ pipeline {
     
     stages {
     	stage('Build') {
-			checkout scm
+			git scm
 			steps {
 				sh 'git branch'
 				echo 'Build'
