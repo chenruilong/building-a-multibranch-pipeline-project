@@ -7,7 +7,9 @@ pipeline {
     }
     stages {
     	stage('Build') {
-    		checkout scm
+			setps {
+				echo 'Build'
+			}
     	}
     	stage('Deploy Test') {
 			when {
