@@ -18,6 +18,14 @@ pipeline {
 				echo pwd()
 			}
     	}
+    	stage('Deploy En Test') {
+    		when {
+				branch 'dev'
+			}
+			steps {
+				echo 'delopy en test'
+			}
+    	}
         stage('Deploy Prod') {
         	when {
         		branch 'master'
@@ -25,6 +33,22 @@ pipeline {
             steps {
                 sh 'node -v'
             }
+        }
+        stage('Deploy En Prod') {
+        	when {
+        		branch 'master'
+        	}
+        	steps {
+        		echo 'delopy en Prod'
+        	}
+        }
+        stage('Svae Build File') {
+        	when {
+        		branch 'master'
+        	}
+        	steps {
+        		echo 'Svae Build File'
+        	}
         }
     }
 }
