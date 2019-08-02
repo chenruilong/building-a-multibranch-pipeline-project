@@ -5,7 +5,7 @@ pipeline {
     	stage('Build') {
 			git scm
 			steps {
-				sh 'git branch'
+				sh 'git branch -a'
 				echo 'Build'
 				echo pwd()
 			}
