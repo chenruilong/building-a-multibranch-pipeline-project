@@ -1,12 +1,14 @@
 pipeline {
-    agent any
+    agent {
+    	docker {
+    		image 'node:8'
+    	}
+    }
     
     stages {
     	stage('Build') {
 			steps {
-				sh 'git branch -a'
-				echo 'Build'
-				echo pwd()
+				echo env
 			}
     	}
     	stage('Deploy Test') {
