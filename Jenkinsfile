@@ -8,7 +8,7 @@ pipeline {
     stages {
     	stage('Build') {
 			steps {
-				echo env.BUILD_ID
+				sh 'echo $env'
 			}
     	}
     	stage('Deploy Test') {
