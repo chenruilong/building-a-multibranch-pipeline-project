@@ -4,11 +4,13 @@ pipeline {
     		image 'node:8'
     	}
     }
-    
+    parameters {
+        choice(name:'PerformMavenRelease',choices:'False\nTrue',description:'desc')
+    }
     stages {
     	stage('Build') {
 			steps {
-				sh 'echo $env'
+				echo "${params.PerformMavenRelease}"
 			}
     	}
     	stage('Deploy Test') {
