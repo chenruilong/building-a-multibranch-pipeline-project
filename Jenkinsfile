@@ -10,7 +10,7 @@ pipeline {
     stages {
     	stage('Build') {
 			steps {
-				echo "${params.PerformMavenRelease}"
+				echo "${params.buildType}"
 			}
     	}
     	stage('Deploy Test') {
