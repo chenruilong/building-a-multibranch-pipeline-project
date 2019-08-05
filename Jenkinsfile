@@ -5,7 +5,7 @@ pipeline {
     	}
     }
     parameters {
-        choice(name:'PerformMavenRelease',choices:'False\nTrue',description:'desc')
+        choice(name:'buildType',choices:'构建\n回滚',description:'选择要执行的操作; \n发布上线/测试选择构建 \n回退版本选择回滚')
     }
     stages {
     	stage('Build') {
